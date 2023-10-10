@@ -30,7 +30,10 @@
         "laravel": {
             "providers": [
                 "Innowise\\ReqRes\\ReqResServiceProvider"
-            ]
+            ],
+            "aliases": {
+                "ReqRes": "Innowise\\ReqRes\\Facade\\ReqRes"
+            }
         },
         "hooks": {
             "pre-commit": [
