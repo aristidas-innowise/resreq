@@ -6,10 +6,22 @@ Client for the API of [ResReq](https://reqres.in/).
 
 This package requires at least PHP 8.1
 
-## Installation
+## Installation / How to use in Laravel?
+Please add those parameters to your composer.json file and run `composer update`
 
-```shell
-composer require innowise/reqres
+```json
+"repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/aristidas-innowise/resreq.git"
+        }
+    ],
+```
+
+```json
+"require": {
+        "innowise/reqres": "dev-main"
+    },
 ```
 
 ### Getting started
@@ -28,20 +40,4 @@ Unit tests are stored in the `tests` folder. Run tests with:
 composer test
 ```
 
-## How to use in Laravel?
-Please add those parameters to your composer.json file and run `composer update`
 
-```json
-"repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/aristidas-innowise/resreq.git"
-        }
-    ],
-```
-
-```json
-"require": {
-        "innowise/reqres": "dev-main"
-    },
-```
