@@ -29,7 +29,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Innowise\\ResReq\\ReqResServiceProvider"
+                "Innowise\\ReqRes\\ReqResServiceProvider"
             ]
         },
         "hooks": {
