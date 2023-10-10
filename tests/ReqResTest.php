@@ -66,7 +66,7 @@ class ReqResTest extends TestCase
         $client = new ReqRes();
         $client->fake(
             [
-                "https://reqres.in/api/users" => $client->response(json_decode(file_get_contents(__DIR__ . '/data/createUserResponse.json'), true), 200),
+                "https://reqres.in/api/users" => $client->response(json_decode(file_get_contents(__DIR__ . '/data/createUserResponse.json'), true), 201),
             ]
         );
         $userId = $client->createUser($name, $job);
