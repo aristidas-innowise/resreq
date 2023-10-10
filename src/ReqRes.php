@@ -28,7 +28,8 @@ class ReqRes extends Factory
         ]);
         // todo: refactor it into separate SendRequestMethod with validation
         if ($response->getStatusCode() !== 200) {
-            throw new Exception("Error Processing getUsers Request", $response->getStatusCode());
+            // todo add custom exception
+            throw new Exception("Error Processing getUsers Request, http status code " . $response->getStatusCode(), $response->getStatusCode());
         }
         $data = json_decode($response, true);
         $response = collect($data['data'])->map(function ($user) {
@@ -44,7 +45,7 @@ class ReqRes extends Factory
         $response = $this->get('/users/' . $id);
         // todo: refactor it into separate SendRequestMethod with validation
         if ($response->getStatusCode() !== 200) {
-            throw new Exception("Error Processing getUsers Request", $response->getStatusCode());
+            throw new Exception("Error Processing getUsers Request, http status code " . $response->getStatusCode(), $response->getStatusCode());
         }
         $body = $response->getBody();
         $data = json_decode($body, true);
@@ -57,7 +58,7 @@ class ReqRes extends Factory
         $response = $this->post('/users', ['name' => $name, 'job' => $job]);
         // todo: refactor it into separate SendRequestMethod with validation
         if ($response->getStatusCode() !== 201) {
-            throw new Exception("Error Processing getUsers Request", $response->getStatusCode());
+            throw new Exception("Error Processing getUsers Request, http status code " . $response->getStatusCode(), $response->getStatusCode());
         }
         $response = json_decode($response, true);
 
